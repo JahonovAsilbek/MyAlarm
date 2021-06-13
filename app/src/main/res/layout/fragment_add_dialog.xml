@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:minWidth="1000dp"
+    android:minHeight="300dp"
+    android:padding="15dp"
+    tools:context=".add.AddDialog">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
+            android:id="@+id/time_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="230dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:picker_curved="true"
+            app:picker_cyclic="true"
+            app:picker_displayDays="false"
+            app:picker_displayDaysOfMonth="false"
+            app:picker_displayYears="false"
+            app:picker_selectedTextColor="@color/black"
+            app:picker_textColor="@color/black"
+            app:picker_visibleItemCount="7" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#2B2B2B"
+            app:layout_constraintTop_toBottomOf="@id/time_picker" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#2B2B2B"
+            app:layout_constraintTop_toBottomOf="@id/repeat_title" />
+
+        <TextView
+            android:id="@+id/repeat_title"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Repeat"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line" />
+
+        <Switch
+            android:id="@+id/repeat_switch"
+            style="@style/Widget.AppCompat.CompoundButton.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumbTint="@color/main_color"
+            android:trackTint="#2B2B2B"
+            app:layout_constraintBottom_toBottomOf="@id/repeat_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/repeat_title" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_correct"
+            android:padding="10dp"
+            app:layout_constraintLeft_toRightOf="@id/guide_50"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line2" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guide_50"
+            app:layout_constraintTop_toBottomOf="@id/line2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
